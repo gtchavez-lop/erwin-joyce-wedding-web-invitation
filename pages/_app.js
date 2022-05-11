@@ -1,7 +1,28 @@
-import '../styles/globals.css'
+import '../styles/globals.css';
+import Head from 'next/head';
 
-function MyApp({ Component, pageProps }) {
-  return <Component {...pageProps} />
-}
+const RootApp = ({ Component, pageprops }) => {
+  return (
+    <>
+      <div className="grid place-items-center select-none relative">
+        <div className="max-w-6xl w-full px-10 relative">
+          <Component {...pageprops} />
+        </div>
 
-export default MyApp
+        {/* footer */}
+        <footer className="max-w-6xl w-full px-10 flex flex-col ">
+          <div className="divider" />
+          <div className="flex justify-between px-5">
+            <p>Erwin and Joyce Anne</p>
+            <p>
+              Designed and Written by Gerald Chavez and Romela Olave-Genzola
+            </p>
+          </div>
+          <div className="divider" />
+        </footer>
+      </div>
+    </>
+  );
+};
+
+export default RootApp;
