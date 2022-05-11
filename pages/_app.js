@@ -12,7 +12,7 @@ const RootApp = ({ Component, pageprops }) => {
         {/* footer */}
         <footer className="max-w-6xl w-full px-10 flex flex-col ">
           <div className="divider" />
-          <div className="flex justify-between px-5">
+          <div className="flex flex-col gap-5 lg:flex-row lg:justify-between px-5">
             <p>Erwin and Joyce Anne</p>
             <p>
               Designed and Written by Gerald Chavez and Romela Olave-Genzola
