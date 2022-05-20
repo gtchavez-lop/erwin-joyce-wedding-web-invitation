@@ -1,22 +1,27 @@
 import '../styles/globals.css';
 import Head from 'next/head';
+import Navbar from '../components/Navbar';
 
 const RootApp = ({ Component, pageprops }) => {
   return (
     <>
-      <div className="grid place-items-center select-none relative">
+      <Navbar />
+      <div className="flex flex-col items-center overflow-x-hidden">
         <div className="max-w-6xl w-full px-10 relative">
           <Component {...pageprops} />
         </div>
+      </div>
 
-        {/* footer */}
+      {/* footer */}
+      <div className="w-full justify-center flex">
         <footer className="max-w-6xl w-full px-10 flex flex-col ">
           <div className="divider" />
-          <div className="flex flex-col gap-5 lg:flex-row lg:justify-between px-5">
+          <div className="flex flex-col gap-5 lg:flex-row lg:justify-between px-5 items-center">
             <p>Erwin and Joyce Anne</p>
-            <p>
-              Designed and Written by Gerald Chavez and Romela Olave-Genzola
-            </p>
+            <div>
+              <p className="text-right">Designed by Gerald Chavez</p>
+              <p className="text-right">Written by Romela Olave-Genzola</p>
+            </div>
           </div>
           <div className="divider" />
         </footer>
