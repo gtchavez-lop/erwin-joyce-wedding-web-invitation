@@ -104,13 +104,13 @@ const Home = (e) => {
                   &#35;
                   <span
                     className="text-secondary font-black "
-                    style={{ textShadow: '1px 1px 4px #31312F50 ' }}
+                    style={{ textShadow: '1px 1px 3px #DE5D83af ' }}
                   >
                     ERWIN
                   </span>
                   nersapusoni
                   <span
-                    className="text-primary font-black "
+                    className="text-secondary font-black "
                     style={{ textShadow: '1px 1px 3px #DE5D83af ' }}
                   >
                     JOYCE
@@ -122,7 +122,8 @@ const Home = (e) => {
                   transition={{ duration: 0.5, ease: 'easeOut', delay: 0.65 }}
                   className="text-lg mt-5"
                 >
-                  You are invited to witness the most amazing event of our life.
+                  Together with our families, we are inviting you to witness and
+                  celebrate with us the most magical event of our life.
                 </motion.p>
               </div>
             </section>
@@ -135,7 +136,7 @@ const Home = (e) => {
                   <p className="text-5xl font-bold">Church</p>
                   <div className="divider my-1 border-2 h-0 border-primary border-dashed" />
                   <p className="text-2xl font-bold text-secondary">
-                    2 o&apos;clock in the afternoon
+                    At 2 o&apos;clock in the afternoon
                   </p>
                   <p className="text-2xl font-bold ">
                     St. John Marie Vianney / Domus Dei
@@ -171,7 +172,7 @@ const Home = (e) => {
               className="w-full flex flex-col my-52 gap-5 z-[10]"
             >
               <p className="text-4xl text-center underline underline-offset-2">
-                Entourage and Guest List
+                Entourage
               </p>
               {/* Parents */}
               <p className="col-span-full text-3xl text-center mt-5">
@@ -203,7 +204,7 @@ const Home = (e) => {
               </p>
               <div className="grid grid-cols-1 sm:grid-cols-2 text-center gap-5">
                 <div className="flex flex-col items-center gap-2">
-                  <p className="text-2xl font-semibold">Men</p>
+                  <p className="text-2xl font-semibold">Godfathers</p>
                   <p style={{ fontFamily: "'Zilla Slab', mono" }}>
                     Mr. Felipe Nemenzo Jr.
                   </p>
@@ -214,7 +215,7 @@ const Home = (e) => {
                     Mr. Joel Genzola Sr.
                   </p>
                   <p style={{ fontFamily: "'Zilla Slab', mono" }}>
-                    Mr. Zanzibar Abonado
+                    Lt. Zanzibar Abonado
                   </p>
                   <p style={{ fontFamily: "'Zilla Slab', mono" }}>
                     Mr. Melchor Jose Camon
@@ -224,7 +225,7 @@ const Home = (e) => {
                   </p>
                 </div>
                 <div className="flex flex-col items-center gap-2">
-                  <p className="text-2xl font-semibold">Women</p>
+                  <p className="text-2xl font-semibold">Godmothers</p>
                   <p style={{ fontFamily: "'Zilla Slab', mono" }}>
                     Mrs. Ma.Luz Alucema
                   </p>
@@ -255,7 +256,9 @@ const Home = (e) => {
                   <div className="collapse-content">
                     <div className="grid grid-cols-1 text-center gap-2">
                       <div className="flex flex-col">
-                        <p className="font-bold underline">Candle</p>
+                        <p className="font-bold underline text-lg">
+                          To light our path
+                        </p>
                         <p style={{ fontFamily: "'Zilla Slab', mono" }}>
                           Mr. Mark Germo
                         </p>
@@ -264,16 +267,23 @@ const Home = (e) => {
                         </p>
                       </div>
                       <div className="flex flex-col">
-                        <p className="font-bold underline">Veil</p>
+                        <p className="font-bold underline text-lg">
+                          To cloth us one
+                        </p>
                         <p style={{ fontFamily: "'Zilla Slab', mono" }}>
                           Mr. Rodolp Steve Genzola
+                        </p>
+                        <p style={{ fontFamily: "'Zilla Slab', mono" }}>
+                          Ms. Marie Cris Johnson
                         </p>
                         <p style={{ fontFamily: "'Zilla Slab', mono" }}>
                           Ms. Mae Tamayo
                         </p>
                       </div>
                       <div className="flex flex-col">
-                        <p className="font-bold underline">Cord</p>
+                        <p className="font-bold underline text-lg">
+                          To bind us together
+                        </p>
                         <p style={{ fontFamily: "'Zilla Slab', mono" }}>
                           Mr. Raffy Dela Peña
                         </p>
@@ -340,6 +350,9 @@ const Home = (e) => {
                       </p>
                       <p style={{ fontFamily: "'Zilla Slab', mono" }}>
                         Mekko Ngitngit
+                      </p>
+                      <p style={{ fontFamily: "'Zilla Slab', mono" }}>
+                        Stephen Samodio
                       </p>
                     </div>
                   </div>
@@ -411,6 +424,9 @@ const Home = (e) => {
                         Qxaz Padilla
                       </p>
                       <p style={{ fontFamily: "'Zilla Slab', mono" }}>
+                        Chloe Madison Rella
+                      </p>
+                      <p style={{ fontFamily: "'Zilla Slab', mono" }}>
                         Eyn Padilla
                       </p>
                       <p style={{ fontFamily: "'Zilla Slab', mono" }}>
@@ -448,8 +464,10 @@ const Home = (e) => {
 
             {/* table Arrangement */}
             <section className="w-full flex flex-col my-52 gap-10 z-[10]">
-              <p className="text-3xl text-center underline underline-offset-2">
-                Table Arrangement
+              <p className="text-3xl text-center flex flex-col items-center lg:flex-row lg:justify-center lg:gap-2 underline underline-offset-2">
+                <span>Guest List </span>
+                <span>and</span>
+                <span>Table Arrangement</span>
               </p>
               {/* vip tables */}
               <div className="grid grid-cols-1 sm:grid-cols-2 text-center gap-5">
