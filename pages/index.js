@@ -1,5 +1,6 @@
 import { AnimatePresence, motion } from 'framer-motion';
 import { useState } from 'react';
+import Gallery from '../components/Gallery';
 
 // landing animation
 const Landing = (e) => {
@@ -70,18 +71,18 @@ const Home = (e) => {
                 rotate: 360,
                 transition: { duration: 100, ease: 'linear', repeat: Infinity },
               }}
-              className="absolute w-[600px] h-[600px] left-[-150px] top-[-150px] -z-10 rounded-full border-dashed border-secondary border-2"
+              className="absolute w-[600px] h-[600px] left-[-150px] top-[-150px] z-[1] rounded-full border-dashed border-secondary border-2"
             />
             <motion.div
               animate={{
                 rotate: 360,
                 transition: { duration: 150, ease: 'linear', repeat: Infinity },
               }}
-              className="absolute w-[800px] h-[800px] left-[-250px] top-[-250px] -z-10 rounded-full border-dashed border-primary border-2"
+              className="absolute w-[800px] h-[800px] left-[-250px] top-[-250px] z-[1] rounded-full border-dashed border-primary border-2"
             />
 
             {/* title */}
-            <section className="w-full flex flex-col mt-48">
+            <section className="w-full flex flex-col mt-48 z-[10]">
               {/* title */}
               <div>
                 <motion.p
@@ -89,6 +90,7 @@ const Home = (e) => {
                   animate={{ opacity: 1, translateX: 0 }}
                   transition={{ duration: 0.5, ease: 'easeOut', delay: 0.25 }}
                   className="font-black text-6xl md:text-8xl lg:text-9xl"
+                  style={{ fontFamily: "'Zilla Slab', cursive" }}
                 >
                   06.08.2022
                 </motion.p>
@@ -97,6 +99,7 @@ const Home = (e) => {
                   animate={{ opacity: 1, translateX: 0 }}
                   transition={{ duration: 0.5, ease: 'easeOut', delay: 0.45 }}
                   className="font-bold text-xl lg:text-2xl"
+                  style={{ fontFamily: "'Charm', cursive" }}
                 >
                   &#35;
                   <span
@@ -125,33 +128,46 @@ const Home = (e) => {
             </section>
 
             {/* time and venue location */}
-            <section className="w-full flex flex-col my-52">
+            <section className="w-full flex flex-col my-52 z-[10]">
               {/* quick glance */}
               <div className="grid grid-cols-1 md:grid-cols-2 place-content-center gap-10 text-right">
                 <div>
                   <p className="text-5xl font-bold">Church</p>
                   <div className="divider my-1 border-2 h-0 border-primary border-dashed" />
-                  <p className="text-2xl font-bold text-secondary">2pm</p>
-                  <p className="text-2xl font-bold text-primary">Somewhere</p>
+                  <p className="text-2xl font-bold text-secondary">
+                    2 o&apos;clock in the afternoon
+                  </p>
+                  <p className="text-2xl font-bold ">
+                    St. John Marie Vianney / Domus Dei
+                  </p>
+                  <p className="text-lg font-bold ">
+                    Domus Dei Hospice Complex, Hda. Makina, Brgy. Silay City,
+                    Negros Occidental
+                  </p>
                 </div>
                 <div>
                   <p className="text-5xl font-bold">Banquet</p>
                   <div className="divider my-1 border-2 h-0 border-primary border-dashed" />
-                  <p className="text-2xl font-bold text-secondary">TDB</p>
-                  <p className="text-2xl font-bold text-primary">Somewhere</p>
+                  <p className="text-2xl font-bold text-secondary">TBA</p>
+                  <p className="text-2xl font-bold ">Domus Dei Event Hall</p>
                 </div>
               </div>
             </section>
 
             {/* gallery */}
-            <section className="w-full flex flex-col my-52 gap-10">
+            <section className="w-full flex flex-col my-52 gap-10 z-[10]">
               <p className="text-3xl text-center underline underline-offset-2">
                 Gallery
               </p>
+              <p className="text-center">Tap the photo to enlarge</p>
+              <Gallery />
             </section>
 
             {/* entourage */}
-            <section className="w-full flex flex-col my-52 gap-5">
+            <section
+              id="guestlist"
+              className="w-full flex flex-col my-52 gap-5 z-[10]"
+            >
               <p className="text-4xl text-center underline underline-offset-2">
                 Entourage and Guest List
               </p>
@@ -162,13 +178,21 @@ const Home = (e) => {
               <div className="grid grid-cols-1 sm:grid-cols-2 text-center gap-5">
                 <div className="flex flex-col items-center gap-2">
                   <p className="text-2xl font-semibold">Groom&apos;s</p>
-                  <p>Mr. Roberto Padilla</p>
-                  <p>Mrs. Arcelie Padilla</p>
+                  <p style={{ fontFamily: "'Zilla Slab', mono" }}>
+                    Mr. Roberto Padilla
+                  </p>
+                  <p style={{ fontFamily: "'Zilla Slab', mono" }}>
+                    Mrs. Arcelie Padilla
+                  </p>
                 </div>
                 <div className="flex flex-col items-center gap-2">
                   <p className="text-2xl font-semibold">Bride&apos;s</p>
-                  <p>Engr. Rogelio T. Genzola</p>
-                  <p>Mrs. Delisa R. Genzola</p>
+                  <p style={{ fontFamily: "'Zilla Slab', mono" }}>
+                    Engr. Rogelio T. Genzola
+                  </p>
+                  <p style={{ fontFamily: "'Zilla Slab', mono" }}>
+                    Mrs. Delisa R. Genzola
+                  </p>
                 </div>
               </div>
               {/* Principal sponsors */}
@@ -178,21 +202,45 @@ const Home = (e) => {
               <div className="grid grid-cols-1 sm:grid-cols-2 text-center gap-5">
                 <div className="flex flex-col items-center gap-2">
                   <p className="text-2xl font-semibold">Men</p>
-                  <p>Mr. Felipe Nemenzo Jr.</p>
-                  <p>Mr. Virgilio Genzola</p>
-                  <p>Mr. Joel Genzola Sr.</p>
-                  <p>Mr. Zanzibar Abonado</p>
-                  <p>Mr. Melchor Jose Camon</p>
-                  <p>Mr. Buddy Labaste</p>
+                  <p style={{ fontFamily: "'Zilla Slab', mono" }}>
+                    Mr. Felipe Nemenzo Jr.
+                  </p>
+                  <p style={{ fontFamily: "'Zilla Slab', mono" }}>
+                    Mr. Virgilio Genzola
+                  </p>
+                  <p style={{ fontFamily: "'Zilla Slab', mono" }}>
+                    Mr. Joel Genzola Sr.
+                  </p>
+                  <p style={{ fontFamily: "'Zilla Slab', mono" }}>
+                    Mr. Zanzibar Abonado
+                  </p>
+                  <p style={{ fontFamily: "'Zilla Slab', mono" }}>
+                    Mr. Melchor Jose Camon
+                  </p>
+                  <p style={{ fontFamily: "'Zilla Slab', mono" }}>
+                    Mr. Buddy Labaste
+                  </p>
                 </div>
                 <div className="flex flex-col items-center gap-2">
                   <p className="text-2xl font-semibold">Women</p>
-                  <p>Mrs. Ma.Luz Alucema</p>
-                  <p>Engr. Gina Cahilig</p>
-                  <p>Dr. Dina Genzola</p>
-                  <p>Mrs. Emelda Dela Peña</p>
-                  <p>Mrs. Carmen Vargas</p>
-                  <p>Mrs. Nelba Canoy</p>
+                  <p style={{ fontFamily: "'Zilla Slab', mono" }}>
+                    Mrs. Ma.Luz Alucema
+                  </p>
+                  <p style={{ fontFamily: "'Zilla Slab', mono" }}>
+                    Engr. Gina Cahilig
+                  </p>
+                  <p style={{ fontFamily: "'Zilla Slab', mono" }}>
+                    Dr. Dina Genzola
+                  </p>
+                  <p style={{ fontFamily: "'Zilla Slab', mono" }}>
+                    Mrs. Emelda Dela Peña
+                  </p>
+                  <p style={{ fontFamily: "'Zilla Slab', mono" }}>
+                    Mrs. Carmen Vargas
+                  </p>
+                  <p style={{ fontFamily: "'Zilla Slab', mono" }}>
+                    Mrs. Nelba Canoy
+                  </p>
                 </div>
               </div>
 
@@ -205,19 +253,31 @@ const Home = (e) => {
                   <div className="collapse-content">
                     <div className="grid grid-cols-1 text-center gap-2">
                       <div className="flex flex-col">
-                        <p className="font-semibold">Candle</p>
-                        <p>Mr. Mark Germo</p>
-                        <p>Ms. Sheena Bertolano</p>
+                        <p className="font-bold underline">Candle</p>
+                        <p style={{ fontFamily: "'Zilla Slab', mono" }}>
+                          Mr. Mark Germo
+                        </p>
+                        <p style={{ fontFamily: "'Zilla Slab', mono" }}>
+                          Ms. Sheena Bertolano
+                        </p>
                       </div>
                       <div className="flex flex-col">
-                        <p className="font-semibold">Veil</p>
-                        <p>Mr. Rodolp Steve Genzola</p>
-                        <p>Ms. Mae Tamayo</p>
+                        <p className="font-bold underline">Veil</p>
+                        <p style={{ fontFamily: "'Zilla Slab', mono" }}>
+                          Mr. Rodolp Steve Genzola
+                        </p>
+                        <p style={{ fontFamily: "'Zilla Slab', mono" }}>
+                          Ms. Mae Tamayo
+                        </p>
                       </div>
                       <div className="flex flex-col">
-                        <p className="font-semibold">Cord</p>
-                        <p>Mr. Raffy Dela Peña</p>
-                        <p>Ms. Rodelie Grace Genzola</p>
+                        <p className="font-bold underline">Cord</p>
+                        <p style={{ fontFamily: "'Zilla Slab', mono" }}>
+                          Mr. Raffy Dela Peña
+                        </p>
+                        <p style={{ fontFamily: "'Zilla Slab', mono" }}>
+                          Ms. Rodelie Grace Genzola
+                        </p>
                       </div>
                     </div>
                   </div>
@@ -230,9 +290,15 @@ const Home = (e) => {
                   </div>
                   <div className="collapse-content">
                     <div className="grid grid-cols-1 text-center gap-2">
-                      <p>Mr. Jimboi Emolaga</p>
-                      <p>Mr. John Michael Gagnao</p>
-                      <p>Mr. Christian Puntal</p>
+                      <p style={{ fontFamily: "'Zilla Slab', mono" }}>
+                        Mr. Jimboi Emolaga
+                      </p>
+                      <p style={{ fontFamily: "'Zilla Slab', mono" }}>
+                        Mr. John Michael Gagnao
+                      </p>
+                      <p style={{ fontFamily: "'Zilla Slab', mono" }}>
+                        Mr. Christian Puntal
+                      </p>
                     </div>
                   </div>
                 </div>
@@ -244,9 +310,15 @@ const Home = (e) => {
                   </div>
                   <div className="collapse-content">
                     <div className="grid grid-cols-1 text-center gap-2">
-                      <p>Ms. Norielyn Acogido </p>
-                      <p>Ms. Maeghann Marie Lacorte </p>
-                      <p>Ms. Shiela Sapio </p>
+                      <p style={{ fontFamily: "'Zilla Slab', mono" }}>
+                        Ms. Norielyn Acogido{' '}
+                      </p>
+                      <p style={{ fontFamily: "'Zilla Slab', mono" }}>
+                        Ms. Maeghann Marie Lacorte{' '}
+                      </p>
+                      <p style={{ fontFamily: "'Zilla Slab', mono" }}>
+                        Ms. Shiela Sapio{' '}
+                      </p>
                     </div>
                   </div>
                 </div>
@@ -258,9 +330,15 @@ const Home = (e) => {
                   </div>
                   <div className="collapse-content">
                     <div className="grid grid-cols-1 text-center gap-2">
-                      <p>Christian Ngitngit</p>
-                      <p>Drake Jetro Lacorte</p>
-                      <p>Mekko Ngitngit</p>
+                      <p style={{ fontFamily: "'Zilla Slab', mono" }}>
+                        Christian Ngitngit
+                      </p>
+                      <p style={{ fontFamily: "'Zilla Slab', mono" }}>
+                        Drake Jetro Lacorte
+                      </p>
+                      <p style={{ fontFamily: "'Zilla Slab', mono" }}>
+                        Mekko Ngitngit
+                      </p>
                     </div>
                   </div>
                 </div>
@@ -272,9 +350,15 @@ const Home = (e) => {
                   </div>
                   <div className="collapse-content">
                     <div className="grid grid-cols-1 text-center gap-2">
-                      <p>Marianne Gwyneth Clarito</p>
-                      <p>Glea Canoy</p>
-                      <p>Isaiahnna Paula Genzola</p>
+                      <p style={{ fontFamily: "'Zilla Slab', mono" }}>
+                        Marianne Gwyneth Clarito
+                      </p>
+                      <p style={{ fontFamily: "'Zilla Slab', mono" }}>
+                        Glea Canoy
+                      </p>
+                      <p style={{ fontFamily: "'Zilla Slab', mono" }}>
+                        Isaiahnna Paula Genzola
+                      </p>
                     </div>
                   </div>
                 </div>
@@ -287,17 +371,25 @@ const Home = (e) => {
                   <div className="collapse-content">
                     <div className="grid grid-cols-1 text-center gap-2">
                       <div className="flex flex-col">
-                        <p className="font-semibold">Ring Bearers</p>
-                        <p>Alexus Uduel O. Genzola </p>
-                        <p>Liam Schuyler Gagnao</p>
+                        <p className="font-bold underline">Ring Bearers</p>
+                        <p style={{ fontFamily: "'Zilla Slab', mono" }}>
+                          Alexus Uduel O. Genzola{' '}
+                        </p>
+                        <p style={{ fontFamily: "'Zilla Slab', mono" }}>
+                          Liam Schuyler Gagnao
+                        </p>
                       </div>
                       <div className="flex flex-col">
-                        <p className="font-semibold">Coin Bearer</p>
-                        <p>Mark Ian Clarito</p>
+                        <p className="font-bold underline">Coin Bearer</p>
+                        <p style={{ fontFamily: "'Zilla Slab', mono" }}>
+                          Mark Ian Clarito
+                        </p>
                       </div>
                       <div className="flex flex-col">
-                        <p className="font-semibold">Bible Bearer</p>
-                        <p>Gab Jelce Labaste</p>
+                        <p className="font-bold underline">Bible Bearer</p>
+                        <p style={{ fontFamily: "'Zilla Slab', mono" }}>
+                          Gab Jelce Labaste
+                        </p>
                       </div>
                     </div>
                   </div>
@@ -310,10 +402,18 @@ const Home = (e) => {
                   </div>
                   <div className="collapse-content">
                     <div className="grid grid-cols-1 text-center gap-2">
-                      <p>Asha Shirley Cariño</p>
-                      <p>Qxaz Padilla</p>
-                      <p>Eyn Padilla</p>
-                      <p>Rhyzagail Evangelista</p>
+                      <p style={{ fontFamily: "'Zilla Slab', mono" }}>
+                        Asha Shirley Cariño
+                      </p>
+                      <p style={{ fontFamily: "'Zilla Slab', mono" }}>
+                        Qxaz Padilla
+                      </p>
+                      <p style={{ fontFamily: "'Zilla Slab', mono" }}>
+                        Eyn Padilla
+                      </p>
+                      <p style={{ fontFamily: "'Zilla Slab', mono" }}>
+                        Rhyzagail Evangelista
+                      </p>
                     </div>
                   </div>
                 </div>
@@ -325,8 +425,12 @@ const Home = (e) => {
                   </div>
                   <div className="collapse-content">
                     <div className="grid grid-cols-1 text-center gap-2">
-                      <p>Sabina Hailegh Vargas</p>
-                      <p>Levy Adalynne Nemenzo</p>
+                      <p style={{ fontFamily: "'Zilla Slab', mono" }}>
+                        Sabina Hailegh Vargas
+                      </p>
+                      <p style={{ fontFamily: "'Zilla Slab', mono" }}>
+                        Levy Adalynne Nemenzo
+                      </p>
                     </div>
                   </div>
                 </div>
@@ -334,14 +438,14 @@ const Home = (e) => {
             </section>
 
             {/* romantic statement */}
-            <section className="w-full flex flex-col my-52 gap-10">
+            {/* <section className="w-full flex flex-col my-52 gap-10 z-[10]">
               <p className="text-3xl text-center underline underline-offset-2">
                 Our testimony to our love
               </p>
-            </section>
+            </section> */}
 
             {/* table Arrangement */}
-            <section className="w-full flex flex-col my-52 gap-10">
+            <section className="w-full flex flex-col my-52 gap-10 z-[10]">
               <p className="text-3xl text-center underline underline-offset-2">
                 Table Arrangement
               </p>
@@ -349,27 +453,117 @@ const Home = (e) => {
               <div className="grid grid-cols-1 sm:grid-cols-2 text-center gap-5">
                 {/* VIP table 1 */}
                 <div className="flex flex-col gap-2">
-                  <p className="text-2xl font-bold">VIP Table 1</p>
-                  <p className="capitalize">GENZOLA, ROGELIO</p>
-                  <p className="capitalize">GENZOLA, DELISA</p>
-                  <p className="capitalize">CAHILIG, ENGR. GINA</p>
-                  <p className="capitalize">VARGAS, CARMEN</p>
-                  <p className="capitalize">ALUCEMA, MA. LUZ</p>
-                  <p className="capitalize">DELA PEÑA, EMELDA</p>
-                  <p className="capitalize">CANOY, NELBA</p>
-                  <p className="capitalize">GENZOLA, DINA</p>
+                  <p
+                    style={{ fontFamily: "'Zilla Slab', mono" }}
+                    className="text-2xl font-bold"
+                  >
+                    VIP Table 1
+                  </p>
+                  <p
+                    style={{ fontFamily: "'Zilla Slab', mono" }}
+                    className="capitalize"
+                  >
+                    GENZOLA, ROGELIO
+                  </p>
+                  <p
+                    style={{ fontFamily: "'Zilla Slab', mono" }}
+                    className="capitalize"
+                  >
+                    GENZOLA, DELISA
+                  </p>
+                  <p
+                    style={{ fontFamily: "'Zilla Slab', mono" }}
+                    className="capitalize"
+                  >
+                    CAHILIG, ENGR. GINA
+                  </p>
+                  <p
+                    style={{ fontFamily: "'Zilla Slab', mono" }}
+                    className="capitalize"
+                  >
+                    VARGAS, CARMEN
+                  </p>
+                  <p
+                    style={{ fontFamily: "'Zilla Slab', mono" }}
+                    className="capitalize"
+                  >
+                    ALUCEMA, MA. LUZ
+                  </p>
+                  <p
+                    style={{ fontFamily: "'Zilla Slab', mono" }}
+                    className="capitalize"
+                  >
+                    DELA PEÑA, EMELDA
+                  </p>
+                  <p
+                    style={{ fontFamily: "'Zilla Slab', mono" }}
+                    className="capitalize"
+                  >
+                    CANOY, NELBA
+                  </p>
+                  <p
+                    style={{ fontFamily: "'Zilla Slab', mono" }}
+                    className="capitalize"
+                  >
+                    GENZOLA, DINA
+                  </p>
                 </div>
                 {/* VIP table 2 */}
                 <div className="flex flex-col gap-2">
-                  <p className="text-2xl font-bold">VIP Table 2</p>
-                  <p className="capitalize">PADILLA, ROBERTO</p>
-                  <p className="capitalize">PADILLA, ARCELIE</p>
-                  <p className="capitalize">ABONADO, LT. ZANZIBAR</p>
-                  <p className="capitalize">GENZOLA, VIRGILIO</p>
-                  <p className="capitalize">GENZOLA, JOEL</p>
-                  <p className="capitalize">CAMON, MELCHOR JOSE</p>
-                  <p className="capitalize">NEMENZO, JR. FELIPE</p>
-                  <p className="capitalize">SANCHEZ, DOMINGO</p>
+                  <p
+                    style={{ fontFamily: "'Zilla Slab', mono" }}
+                    className="text-2xl font-bold"
+                  >
+                    VIP Table 2
+                  </p>
+                  <p
+                    style={{ fontFamily: "'Zilla Slab', mono" }}
+                    className="capitalize"
+                  >
+                    PADILLA, ROBERTO
+                  </p>
+                  <p
+                    style={{ fontFamily: "'Zilla Slab', mono" }}
+                    className="capitalize"
+                  >
+                    PADILLA, ARCELIE
+                  </p>
+                  <p
+                    style={{ fontFamily: "'Zilla Slab', mono" }}
+                    className="capitalize"
+                  >
+                    ABONADO, LT. ZANZIBAR
+                  </p>
+                  <p
+                    style={{ fontFamily: "'Zilla Slab', mono" }}
+                    className="capitalize"
+                  >
+                    GENZOLA, VIRGILIO
+                  </p>
+                  <p
+                    style={{ fontFamily: "'Zilla Slab', mono" }}
+                    className="capitalize"
+                  >
+                    GENZOLA, JOEL
+                  </p>
+                  <p
+                    style={{ fontFamily: "'Zilla Slab', mono" }}
+                    className="capitalize"
+                  >
+                    CAMON, MELCHOR JOSE
+                  </p>
+                  <p
+                    style={{ fontFamily: "'Zilla Slab', mono" }}
+                    className="capitalize"
+                  >
+                    NEMENZO, JR. FELIPE
+                  </p>
+                  <p
+                    style={{ fontFamily: "'Zilla Slab', mono" }}
+                    className="capitalize"
+                  >
+                    SANCHEZ, DOMINGO
+                  </p>
                 </div>
               </div>
 
@@ -383,14 +577,54 @@ const Home = (e) => {
                   <div className="collapse-content">
                     <div className="flex flex-col">
                       <div className="flex flex-col gap-2">
-                        <p className="capitalize">LACORTE, MAEGHANN MARIE</p>
-                        <p className="capitalize">GAGNAO, JOHN MICHAEL</p>
-                        <p className="capitalize">SAPIO, SHIELA</p>
-                        <p className="capitalize">CLARITO, MARIANNE</p>
-                        <p className="capitalize">DELA PEÑA, RAFFY</p>
-                        <p className="capitalize">PUNTA,L CHRISTIAN</p>
-                        <p className="capitalize">TAMAYO, MAE MARIE</p>
-                        <p className="capitalize">NGITNGIT, CHRISTIAN</p>
+                        <p
+                          style={{ fontFamily: "'Zilla Slab', mono" }}
+                          className="capitalize"
+                        >
+                          LACORTE, MAEGHANN MARIE
+                        </p>
+                        <p
+                          style={{ fontFamily: "'Zilla Slab', mono" }}
+                          className="capitalize"
+                        >
+                          GAGNAO, JOHN MICHAEL
+                        </p>
+                        <p
+                          style={{ fontFamily: "'Zilla Slab', mono" }}
+                          className="capitalize"
+                        >
+                          SAPIO, SHIELA
+                        </p>
+                        <p
+                          style={{ fontFamily: "'Zilla Slab', mono" }}
+                          className="capitalize"
+                        >
+                          CLARITO, MARIANNE
+                        </p>
+                        <p
+                          style={{ fontFamily: "'Zilla Slab', mono" }}
+                          className="capitalize"
+                        >
+                          DELA PEÑA, RAFFY
+                        </p>
+                        <p
+                          style={{ fontFamily: "'Zilla Slab', mono" }}
+                          className="capitalize"
+                        >
+                          PUNTA,L CHRISTIAN
+                        </p>
+                        <p
+                          style={{ fontFamily: "'Zilla Slab', mono" }}
+                          className="capitalize"
+                        >
+                          TAMAYO, MAE MARIE
+                        </p>
+                        <p
+                          style={{ fontFamily: "'Zilla Slab', mono" }}
+                          className="capitalize"
+                        >
+                          NGITNGIT, CHRISTIAN
+                        </p>
                       </div>
                     </div>
                   </div>
@@ -403,14 +637,54 @@ const Home = (e) => {
                   <div className="collapse-content">
                     <div className="flex flex-col">
                       <div className="flex flex-col gap-2">
-                        <p className="capitalize">GENZOLA, RODELIE GRACE</p>
-                        <p className="capitalize">BERTOLANO, SHEENA</p>
-                        <p className="capitalize">GENZOLA, RODOLP STEVE</p>
-                        <p className="capitalize">GENZOLA, ISAIAHNNA PAULA</p>
-                        <p className="capitalize">CANOY, GLEA</p>
-                        <p className="capitalize">GERMO, MARK</p>
-                        <p className="capitalize">NGITNGIT, MEKKO</p>
-                        <p className="capitalize">SAMODIO, STEPHEN</p>
+                        <p
+                          style={{ fontFamily: "'Zilla Slab', mono" }}
+                          className="capitalize"
+                        >
+                          GENZOLA, RODELIE GRACE
+                        </p>
+                        <p
+                          style={{ fontFamily: "'Zilla Slab', mono" }}
+                          className="capitalize"
+                        >
+                          BERTOLANO, SHEENA
+                        </p>
+                        <p
+                          style={{ fontFamily: "'Zilla Slab', mono" }}
+                          className="capitalize"
+                        >
+                          GENZOLA, RODOLP STEVE
+                        </p>
+                        <p
+                          style={{ fontFamily: "'Zilla Slab', mono" }}
+                          className="capitalize"
+                        >
+                          GENZOLA, ISAIAHNNA PAULA
+                        </p>
+                        <p
+                          style={{ fontFamily: "'Zilla Slab', mono" }}
+                          className="capitalize"
+                        >
+                          CANOY, GLEA
+                        </p>
+                        <p
+                          style={{ fontFamily: "'Zilla Slab', mono" }}
+                          className="capitalize"
+                        >
+                          GERMO, MARK
+                        </p>
+                        <p
+                          style={{ fontFamily: "'Zilla Slab', mono" }}
+                          className="capitalize"
+                        >
+                          NGITNGIT, MEKKO
+                        </p>
+                        <p
+                          style={{ fontFamily: "'Zilla Slab', mono" }}
+                          className="capitalize"
+                        >
+                          SAMODIO, STEPHEN
+                        </p>
                       </div>
                     </div>
                   </div>
@@ -423,14 +697,54 @@ const Home = (e) => {
                   <div className="collapse-content">
                     <div className="flex flex-col">
                       <div className="flex flex-col gap-2">
-                        <p className="capitalize">GENZOLA, EUGENE STEVE</p>
-                        <p className="capitalize">GENZOLA, ROMELA</p>
-                        <p className="capitalize">GENZOLA, ALEXUS UDUEL</p>
-                        <p className="capitalize">NEMENZO, EVELYN</p>
-                        <p className="capitalize">VARGAS, RJ</p>
-                        <p className="capitalize">VARGAS, SABINA HAILEIGH</p>
-                        <p className="capitalize">SANCHEZ, NENITA</p>
-                        <p className="capitalize">DELA CRUZ, ELVIRA</p>
+                        <p
+                          style={{ fontFamily: "'Zilla Slab', mono" }}
+                          className="capitalize"
+                        >
+                          GENZOLA, EUGENE STEVE
+                        </p>
+                        <p
+                          style={{ fontFamily: "'Zilla Slab', mono" }}
+                          className="capitalize"
+                        >
+                          GENZOLA, ROMELA
+                        </p>
+                        <p
+                          style={{ fontFamily: "'Zilla Slab', mono" }}
+                          className="capitalize"
+                        >
+                          GENZOLA, ALEXUS UDUEL
+                        </p>
+                        <p
+                          style={{ fontFamily: "'Zilla Slab', mono" }}
+                          className="capitalize"
+                        >
+                          NEMENZO, EVELYN
+                        </p>
+                        <p
+                          style={{ fontFamily: "'Zilla Slab', mono" }}
+                          className="capitalize"
+                        >
+                          VARGAS, RJ
+                        </p>
+                        <p
+                          style={{ fontFamily: "'Zilla Slab', mono" }}
+                          className="capitalize"
+                        >
+                          VARGAS, SABINA HAILEIGH
+                        </p>
+                        <p
+                          style={{ fontFamily: "'Zilla Slab', mono" }}
+                          className="capitalize"
+                        >
+                          SANCHEZ, NENITA
+                        </p>
+                        <p
+                          style={{ fontFamily: "'Zilla Slab', mono" }}
+                          className="capitalize"
+                        >
+                          DELA CRUZ, ELVIRA
+                        </p>
                       </div>
                     </div>
                   </div>
@@ -443,14 +757,54 @@ const Home = (e) => {
                   <div className="collapse-content">
                     <div className="flex flex-col">
                       <div className="flex flex-col gap-2">
-                        <p className="capitalize">PUNTAL, STEPHANIE</p>
-                        <p className="capitalize">PADILLA, NORELYN</p>
-                        <p className="capitalize">EVANGELISTA, RAZEL</p>
-                        <p className="capitalize">EVANGELISTA, RHYZAGAIL</p>
-                        <p className="capitalize">PADILLA, MARK IAN</p>
-                        <p className="capitalize">DELA PEÑA, FRENCE</p>
-                        <p className="capitalize">PADILLA, EYN</p>
-                        <p className="capitalize">PADILLA, QXAZ</p>
+                        <p
+                          style={{ fontFamily: "'Zilla Slab', mono" }}
+                          className="capitalize"
+                        >
+                          PUNTAL, STEPHANIE
+                        </p>
+                        <p
+                          style={{ fontFamily: "'Zilla Slab', mono" }}
+                          className="capitalize"
+                        >
+                          PADILLA, NORELYN
+                        </p>
+                        <p
+                          style={{ fontFamily: "'Zilla Slab', mono" }}
+                          className="capitalize"
+                        >
+                          EVANGELISTA, RAZEL
+                        </p>
+                        <p
+                          style={{ fontFamily: "'Zilla Slab', mono" }}
+                          className="capitalize"
+                        >
+                          EVANGELISTA, RHYZAGAIL
+                        </p>
+                        <p
+                          style={{ fontFamily: "'Zilla Slab', mono" }}
+                          className="capitalize"
+                        >
+                          PADILLA, MARK IAN
+                        </p>
+                        <p
+                          style={{ fontFamily: "'Zilla Slab', mono" }}
+                          className="capitalize"
+                        >
+                          DELA PEÑA, FRENCE
+                        </p>
+                        <p
+                          style={{ fontFamily: "'Zilla Slab', mono" }}
+                          className="capitalize"
+                        >
+                          PADILLA, EYN
+                        </p>
+                        <p
+                          style={{ fontFamily: "'Zilla Slab', mono" }}
+                          className="capitalize"
+                        >
+                          PADILLA, QXAZ
+                        </p>
                       </div>
                     </div>
                   </div>
@@ -463,14 +817,54 @@ const Home = (e) => {
                   <div className="collapse-content">
                     <div className="flex flex-col">
                       <div className="flex flex-col gap-2">
-                        <p className="capitalize">GENZOLA, YASMIN</p>
-                        <p className="capitalize">GENZOLA, MA. JOYA</p>
-                        <p className="capitalize">GENZOLA, PABLITO</p>
-                        <p className="capitalize">GENZOLA, ELMA</p>
-                        <p className="capitalize">LABASTE, LINA</p>
-                        <p className="capitalize">LABASTE, BUDDY</p>
-                        <p className="capitalize">DIGNADICE, ERICA</p>
-                        <p className="capitalize">LABASTE, GAB JELCE</p>
+                        <p
+                          style={{ fontFamily: "'Zilla Slab', mono" }}
+                          className="capitalize"
+                        >
+                          GENZOLA, YASMIN
+                        </p>
+                        <p
+                          style={{ fontFamily: "'Zilla Slab', mono" }}
+                          className="capitalize"
+                        >
+                          GENZOLA, MA. JOYA
+                        </p>
+                        <p
+                          style={{ fontFamily: "'Zilla Slab', mono" }}
+                          className="capitalize"
+                        >
+                          GENZOLA, PABLITO
+                        </p>
+                        <p
+                          style={{ fontFamily: "'Zilla Slab', mono" }}
+                          className="capitalize"
+                        >
+                          GENZOLA, ELMA
+                        </p>
+                        <p
+                          style={{ fontFamily: "'Zilla Slab', mono" }}
+                          className="capitalize"
+                        >
+                          LABASTE, LINA
+                        </p>
+                        <p
+                          style={{ fontFamily: "'Zilla Slab', mono" }}
+                          className="capitalize"
+                        >
+                          LABASTE, BUDDY
+                        </p>
+                        <p
+                          style={{ fontFamily: "'Zilla Slab', mono" }}
+                          className="capitalize"
+                        >
+                          DIGNADICE, ERICA
+                        </p>
+                        <p
+                          style={{ fontFamily: "'Zilla Slab', mono" }}
+                          className="capitalize"
+                        >
+                          LABASTE, GAB JELCE
+                        </p>
                       </div>
                     </div>
                   </div>
@@ -483,14 +877,54 @@ const Home = (e) => {
                   <div className="collapse-content">
                     <div className="flex flex-col">
                       <div className="flex flex-col gap-2">
-                        <p className="capitalize">BUSTILLO, CLARISSE ANNE</p>
-                        <p className="capitalize">SISON, ARANEE</p>
-                        <p className="capitalize">CALAS, JAMES</p>
-                        <p className="capitalize">MACADO, ERLINDA</p>
-                        <p className="capitalize">PUNTAL, CHRISTOPHER</p>
-                        <p className="capitalize">MARTIR, RESTY</p>
-                        <p className="capitalize">MARTIR, CHERRY MAE</p>
-                        <p className="capitalize">MACADO, RODULFO</p>
+                        <p
+                          style={{ fontFamily: "'Zilla Slab', mono" }}
+                          className="capitalize"
+                        >
+                          BUSTILLO, CLARISSE ANNE
+                        </p>
+                        <p
+                          style={{ fontFamily: "'Zilla Slab', mono" }}
+                          className="capitalize"
+                        >
+                          SISON, ARANEE
+                        </p>
+                        <p
+                          style={{ fontFamily: "'Zilla Slab', mono" }}
+                          className="capitalize"
+                        >
+                          CALAS, JAMES
+                        </p>
+                        <p
+                          style={{ fontFamily: "'Zilla Slab', mono" }}
+                          className="capitalize"
+                        >
+                          MACADO, ERLINDA
+                        </p>
+                        <p
+                          style={{ fontFamily: "'Zilla Slab', mono" }}
+                          className="capitalize"
+                        >
+                          PUNTAL, CHRISTOPHER
+                        </p>
+                        <p
+                          style={{ fontFamily: "'Zilla Slab', mono" }}
+                          className="capitalize"
+                        >
+                          MARTIR, RESTY
+                        </p>
+                        <p
+                          style={{ fontFamily: "'Zilla Slab', mono" }}
+                          className="capitalize"
+                        >
+                          MARTIR, CHERRY MAE
+                        </p>
+                        <p
+                          style={{ fontFamily: "'Zilla Slab', mono" }}
+                          className="capitalize"
+                        >
+                          MACADO, RODULFO
+                        </p>
                       </div>
                     </div>
                   </div>
@@ -503,11 +937,36 @@ const Home = (e) => {
                   <div className="collapse-content">
                     <div className="flex flex-col">
                       <div className="flex flex-col gap-2">
-                        <p className="capitalize">NEMENZO, JENNIFER</p>
-                        <p className="capitalize">NEMENZO, GERALD</p>
-                        <p className="capitalize">NEMENZO, LEVY ADALYNE</p>
-                        <p className="capitalize">NEMENZO, ABDIAS FELIP</p>
-                        <p className="capitalize">GAGNAO, LIAM SCHUYLER</p>
+                        <p
+                          style={{ fontFamily: "'Zilla Slab', mono" }}
+                          className="capitalize"
+                        >
+                          NEMENZO, JENNIFER
+                        </p>
+                        <p
+                          style={{ fontFamily: "'Zilla Slab', mono" }}
+                          className="capitalize"
+                        >
+                          NEMENZO, GERALD
+                        </p>
+                        <p
+                          style={{ fontFamily: "'Zilla Slab', mono" }}
+                          className="capitalize"
+                        >
+                          NEMENZO, LEVY ADALYNE
+                        </p>
+                        <p
+                          style={{ fontFamily: "'Zilla Slab', mono" }}
+                          className="capitalize"
+                        >
+                          NEMENZO, ABDIAS FELIP
+                        </p>
+                        <p
+                          style={{ fontFamily: "'Zilla Slab', mono" }}
+                          className="capitalize"
+                        >
+                          GAGNAO, LIAM SCHUYLER
+                        </p>
                       </div>
                     </div>
                   </div>
@@ -520,14 +979,54 @@ const Home = (e) => {
                   <div className="collapse-content">
                     <div className="flex flex-col">
                       <div className="flex flex-col gap-2">
-                        <p className="capitalize">PASOQUIN, MAGDALENA</p>
-                        <p className="capitalize">CLAVERIA, MARITES </p>
-                        <p className="capitalize">ABONADO, DIVINA</p>
-                        <p className="capitalize">CAMON, LIZA</p>
-                        <p className="capitalize">PADILLA, HERNAN</p>
-                        <p className="capitalize">PUNTAL, ARLENE</p>
-                        <p className="capitalize">NARRO, DIANNA</p>
-                        <p className="capitalize">HIGINO, BOYSEN</p>
+                        <p
+                          style={{ fontFamily: "'Zilla Slab', mono" }}
+                          className="capitalize"
+                        >
+                          PASOQUIN, MAGDALENA
+                        </p>
+                        <p
+                          style={{ fontFamily: "'Zilla Slab', mono" }}
+                          className="capitalize"
+                        >
+                          CLAVERIA, MARITES{' '}
+                        </p>
+                        <p
+                          style={{ fontFamily: "'Zilla Slab', mono" }}
+                          className="capitalize"
+                        >
+                          ABONADO, DIVINA
+                        </p>
+                        <p
+                          style={{ fontFamily: "'Zilla Slab', mono" }}
+                          className="capitalize"
+                        >
+                          CAMON, LIZA
+                        </p>
+                        <p
+                          style={{ fontFamily: "'Zilla Slab', mono" }}
+                          className="capitalize"
+                        >
+                          PADILLA, HERNAN
+                        </p>
+                        <p
+                          style={{ fontFamily: "'Zilla Slab', mono" }}
+                          className="capitalize"
+                        >
+                          PUNTAL, ARLENE
+                        </p>
+                        <p
+                          style={{ fontFamily: "'Zilla Slab', mono" }}
+                          className="capitalize"
+                        >
+                          NARRO, DIANNA
+                        </p>
+                        <p
+                          style={{ fontFamily: "'Zilla Slab', mono" }}
+                          className="capitalize"
+                        >
+                          HIGINO, BOYSEN
+                        </p>
                       </div>
                     </div>
                   </div>
@@ -540,13 +1039,46 @@ const Home = (e) => {
                   <div className="collapse-content">
                     <div className="flex flex-col">
                       <div className="flex flex-col gap-2">
-                        <p className="capitalize">GENZOLA VERGIL</p>
-                        <p className="capitalize">GENZOLA EDRIAN</p>
-                        <p className="capitalize">CANOY ELA</p>
-                        <p className="capitalize">CARIÑO ASHA SHIRLEY</p>
-                        <p className="capitalize">CANOY NHEL</p>
-                        <p className="capitalize">CAHILIG EDWINA</p>
-                        <p className="capitalize">
+                        <p
+                          style={{ fontFamily: "'Zilla Slab', mono" }}
+                          className="capitalize"
+                        >
+                          GENZOLA VERGIL
+                        </p>
+                        <p
+                          style={{ fontFamily: "'Zilla Slab', mono" }}
+                          className="capitalize"
+                        >
+                          GENZOLA EDRIAN
+                        </p>
+                        <p
+                          style={{ fontFamily: "'Zilla Slab', mono" }}
+                          className="capitalize"
+                        >
+                          CANOY ELA
+                        </p>
+                        <p
+                          style={{ fontFamily: "'Zilla Slab', mono" }}
+                          className="capitalize"
+                        >
+                          CARIÑO ASHA SHIRLEY
+                        </p>
+                        <p
+                          style={{ fontFamily: "'Zilla Slab', mono" }}
+                          className="capitalize"
+                        >
+                          CANOY NHEL
+                        </p>
+                        <p
+                          style={{ fontFamily: "'Zilla Slab', mono" }}
+                          className="capitalize"
+                        >
+                          CAHILIG EDWINA
+                        </p>
+                        <p
+                          style={{ fontFamily: "'Zilla Slab', mono" }}
+                          className="capitalize"
+                        >
                           CASTEL JR. ROBERT (Videographer)
                         </p>
                       </div>
@@ -561,14 +1093,54 @@ const Home = (e) => {
                   <div className="collapse-content">
                     <div className="flex flex-col">
                       <div className="flex flex-col gap-2">
-                        <p className="capitalize">BERMEL, ARNEL</p>
-                        <p className="capitalize">RICO, JOHNY</p>
-                        <p className="capitalize">CUENCA, JORGE</p>
-                        <p className="capitalize">BANTIGUE, ABEGAIL</p>
-                        <p className="capitalize">GENOBIS, RAMSEY</p>
-                        <p className="capitalize">DELGADO, LYSSA</p>
-                        <p className="capitalize">NGITNGIT, MICHAEL</p>
-                        <p className="capitalize">MONTEMAYOR, JAMES </p>
+                        <p
+                          style={{ fontFamily: "'Zilla Slab', mono" }}
+                          className="capitalize"
+                        >
+                          BERMEL, ARNEL
+                        </p>
+                        <p
+                          style={{ fontFamily: "'Zilla Slab', mono" }}
+                          className="capitalize"
+                        >
+                          RICO, JOHNY
+                        </p>
+                        <p
+                          style={{ fontFamily: "'Zilla Slab', mono" }}
+                          className="capitalize"
+                        >
+                          CUENCA, JORGE
+                        </p>
+                        <p
+                          style={{ fontFamily: "'Zilla Slab', mono" }}
+                          className="capitalize"
+                        >
+                          BANTIGUE, ABEGAIL
+                        </p>
+                        <p
+                          style={{ fontFamily: "'Zilla Slab', mono" }}
+                          className="capitalize"
+                        >
+                          GENOBIS, RAMSEY
+                        </p>
+                        <p
+                          style={{ fontFamily: "'Zilla Slab', mono" }}
+                          className="capitalize"
+                        >
+                          DELGADO, LYSSA
+                        </p>
+                        <p
+                          style={{ fontFamily: "'Zilla Slab', mono" }}
+                          className="capitalize"
+                        >
+                          NGITNGIT, MICHAEL
+                        </p>
+                        <p
+                          style={{ fontFamily: "'Zilla Slab', mono" }}
+                          className="capitalize"
+                        >
+                          MONTEMAYOR, JAMES{' '}
+                        </p>
                       </div>
                     </div>
                   </div>
@@ -581,11 +1153,36 @@ const Home = (e) => {
                   <div className="collapse-content">
                     <div className="flex flex-col">
                       <div className="flex flex-col gap-2">
-                        <p className="capitalize">ONGCOL, BOBBY</p>
-                        <p className="capitalize">BALDADO, REYMAR</p>
-                        <p className="capitalize">OBESO, JONEL</p>
-                        <p className="capitalize">PASKIL, RG</p>
-                        <p className="capitalize">DELA FELIS, FEDERICO</p>
+                        <p
+                          style={{ fontFamily: "'Zilla Slab', mono" }}
+                          className="capitalize"
+                        >
+                          ONGCOL, BOBBY
+                        </p>
+                        <p
+                          style={{ fontFamily: "'Zilla Slab', mono" }}
+                          className="capitalize"
+                        >
+                          BALDADO, REYMAR
+                        </p>
+                        <p
+                          style={{ fontFamily: "'Zilla Slab', mono" }}
+                          className="capitalize"
+                        >
+                          OBESO, JONEL
+                        </p>
+                        <p
+                          style={{ fontFamily: "'Zilla Slab', mono" }}
+                          className="capitalize"
+                        >
+                          PASKIL, RG
+                        </p>
+                        <p
+                          style={{ fontFamily: "'Zilla Slab', mono" }}
+                          className="capitalize"
+                        >
+                          DELA FELIS, FEDERICO
+                        </p>
                       </div>
                     </div>
                   </div>
@@ -594,10 +1191,26 @@ const Home = (e) => {
             </section>
 
             {/* contact */}
-            <section className="w-full flex flex-col my-52 gap-10">
+            <section
+              id="contact"
+              className="w-full flex flex-col my-52 gap-10 z-[10]"
+            >
               <p className="text-3xl text-center underline underline-offset-2">
                 Contact Us
               </p>
+
+              <div className="card max-w-md self-center w-full">
+                <div className="card-body text-center">
+                  <p className="text-xl font-bold">Mrs. Romela Olave-Genzola</p>
+                  <p className="font-bold">Wedding Coordinator</p>
+                  <p
+                    style={{ fontFamily: "'Zilla Slab', mono" }}
+                    className="text-xl font-bold mt-5"
+                  >
+                    (Globe Telecom) +63 94 3679 3660
+                  </p>
+                </div>
+              </div>
             </section>
           </>
         )}

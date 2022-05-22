@@ -14,13 +14,17 @@ const RootApp = ({ Component, pageprops }) => {
 
       {/* footer */}
       <div className="w-full justify-center flex">
-        <footer className="max-w-6xl w-full px-10 flex flex-col ">
+        <footer className="max-w-6xl w-full px-10 flex flex-col">
           <div className="divider" />
           <div className="flex flex-col gap-5 lg:flex-row lg:justify-between px-5 items-center">
             <p>Erwin and Joyce Anne</p>
             <div>
-              <p className="text-right">Designed by Gerald Chavez</p>
-              <p className="text-right">Written by Romela Olave-Genzola</p>
+              <p className="text-center lg:text-right">
+                E-Invitation Design by Gerald Chavez
+              </p>
+              <p className="text-center lg:text-right">
+                Content Written by Romela Olave-Genzola
+              </p>
             </div>
           </div>
           <div className="divider" />

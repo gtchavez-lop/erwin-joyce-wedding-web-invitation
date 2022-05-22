@@ -1,5 +1,6 @@
+import Link from 'next/link';
 import { useState, useEffect } from 'react';
-import { AiFillPhone, AiFillBook } from 'react-icons/ai';
+import { AiFillPhone, AiOutlineMenu } from 'react-icons/ai';
 
 const Navbar = (e) => {
   const [thresholdReached, setThresholdReached] = useState(false);
@@ -31,25 +32,33 @@ const Navbar = (e) => {
           </p>
           {/* links */}
           <ul className="menu menu-horizontal text-lg hidden md:inline-flex">
-            <li>
-              <a>Contact Us</a>
-            </li>
-            <li>
-              <a>Our Testimony</a>
-            </li>
+            <Link href="#contact">
+              <li>
+                <a>Contact Us</a>
+              </li>
+            </Link>
+            <Link href="#guestlist">
+              <li>
+                <a>Guest List</a>
+              </li>
+            </Link>
           </ul>
 
           <ul className="menu menu-horizontal text-lg md:hidden">
-            <li>
-              <a>
-                <AiFillPhone size={20} />
-              </a>
-            </li>
-            <li>
-              <a>
-                <AiFillBook size={20} />
-              </a>
-            </li>
+            <Link href="#contact">
+              <li>
+                <a>
+                  <AiFillPhone size={20} />
+                </a>
+              </li>
+            </Link>
+            <Link href="#guestlist">
+              <li>
+                <a>
+                  <AiOutlineMenu size={20} />
+                </a>
+              </li>
+            </Link>
           </ul>
         </div>
       </nav>
