@@ -1244,10 +1244,10 @@ const Home = (e) => {
             {/* romantic statement */}
             <section className="w-full flex flex-col my-16 mb-48 gap-10 z-[10] items-center">
               <p className="text-3xl text-center font-bold max-w-lg">
-                As love is what the day all about. Your presence is one we can't
-                celebrate without. But should you still believe that a gift is
-                worth giving. A simple envelope for our future is a delightful
-                blessing.
+                As love is what the day all about. Your presence is one we
+                can&apos;t celebrate without. But should you still believe that
+                a gift is worth giving. A simple envelope for our future is a
+                delightful blessing.
               </p>
             </section>
 
