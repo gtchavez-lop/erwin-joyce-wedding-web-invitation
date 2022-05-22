@@ -120,7 +120,18 @@ const Home = (e) => {
                   initial={{ opacity: 0, translateX: 10 }}
                   animate={{ opacity: 1, translateX: 0 }}
                   transition={{ duration: 0.5, ease: 'easeOut', delay: 0.65 }}
-                  className="text-lg mt-5"
+                  className="text-xl mt-5 flex flex-col"
+                >
+                  <span className="font-bold">
+                    &quot;I have found the One whom my soul Love&quot;
+                  </span>
+                  <span>Song of Solomon 3:4</span>
+                </motion.p>
+                <motion.p
+                  initial={{ opacity: 0, translateX: 10 }}
+                  animate={{ opacity: 1, translateX: 0 }}
+                  transition={{ duration: 0.5, ease: 'easeOut', delay: 0.85 }}
+                  className="text-lg mt-52"
                 >
                   Together with our families, we are inviting you to witness and
                   celebrate with us the most magical event of our life.
@@ -129,7 +140,7 @@ const Home = (e) => {
             </section>
 
             {/* time and venue location */}
-            <section className="w-full flex flex-col my-52 z-[10]">
+            <section className="w-full flex flex-col mb-52 mt-16 z-[10]">
               {/* quick glance */}
               <div className="grid grid-cols-1 md:grid-cols-2 place-content-center gap-10 text-right">
                 <div>
@@ -386,7 +397,7 @@ const Home = (e) => {
                   <div className="collapse-content">
                     <div className="grid grid-cols-1 text-center gap-2">
                       <div className="flex flex-col">
-                        <p className="font-bold underline">Ring Bearers</p>
+                        <p className="font-bold underline text-xl">Ring</p>
                         <p style={{ fontFamily: "'Zilla Slab', mono" }}>
                           Alexus Uduel O. Genzola{' '}
                         </p>
@@ -395,13 +406,13 @@ const Home = (e) => {
                         </p>
                       </div>
                       <div className="flex flex-col">
-                        <p className="font-bold underline">Coin Bearer</p>
+                        <p className="font-bold underline text-xl">Coin</p>
                         <p style={{ fontFamily: "'Zilla Slab', mono" }}>
                           Mark Ian Clarito
                         </p>
                       </div>
                       <div className="flex flex-col">
-                        <p className="font-bold underline">Bible Bearer</p>
+                        <p className="font-bold underline text-xl">Bible</p>
                         <p style={{ fontFamily: "'Zilla Slab', mono" }}>
                           Gab Jelce Labaste
                         </p>
@@ -454,13 +465,6 @@ const Home = (e) => {
                 </div>
               </div>
             </section>
-
-            {/* romantic statement */}
-            {/* <section className="w-full flex flex-col my-52 gap-10 z-[10]">
-              <p className="text-3xl text-center underline underline-offset-2">
-                Our testimony to our love
-              </p>
-            </section> */}
 
             {/* table Arrangement */}
             <section className="w-full flex flex-col my-52 gap-10 z-[10]">
@@ -1095,11 +1099,13 @@ const Home = (e) => {
                         >
                           CAHILIG EDWINA
                         </p>
-                        <p
-                          style={{ fontFamily: "'Zilla Slab', mono" }}
-                          className="capitalize"
-                        >
-                          CASTEL JR. ROBERT (Videographer)
+                        <p className="capitalize flex flex-col">
+                          <span style={{ fontFamily: "'Zilla Slab', mono" }}>
+                            - Videographer -
+                          </span>
+                          <span style={{ fontFamily: "'Zilla Slab', mono" }}>
+                            CASTEL JR. ROBERT
+                          </span>
                         </p>
                       </div>
                     </div>
@@ -1210,10 +1216,45 @@ const Home = (e) => {
               </div>
             </section>
 
+            {/* imoportant notes */}
+            <section className="w-full flex flex-col my-16 gap-10 z-[10]">
+              <p className="text-3xl text-center underline underline-offset-2">
+                Important Note for Guests
+              </p>
+
+              <div className="card max-w-md self-center w-full">
+                <div className="card-body text-center">
+                  <p
+                    style={{ fontFamily: "'Zilla Slab', mono" }}
+                    className="text-2xl font-bold"
+                  >
+                    Attire will be strictly formal
+                  </p>
+                  <p
+                    style={{ fontFamily: "'Zilla Slab', mono" }}
+                    className="text-xl"
+                  >
+                    Must only wear lighter shades of green, mint green, baby
+                    pink, powder pink, light pink, and peach
+                  </p>
+                </div>
+              </div>
+            </section>
+
+            {/* romantic statement */}
+            <section className="w-full flex flex-col my-16 mb-48 gap-10 z-[10] items-center">
+              <p className="text-3xl text-center font-bold max-w-lg">
+                As love is what the day all about. Your presence is one we can't
+                celebrate without. But should you still believe that a gift is
+                worth giving. A simple envelope for our future is a delightful
+                blessing.
+              </p>
+            </section>
+
             {/* contact */}
             <section
               id="contact"
-              className="w-full flex flex-col my-52 gap-10 z-[10]"
+              className="w-full flex flex-col mb-52 gap-10 z-[10]"
             >
               <p className="text-3xl text-center underline underline-offset-2">
                 Contact Us
