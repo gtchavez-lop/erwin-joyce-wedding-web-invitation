@@ -148,7 +148,9 @@ const Home = (e) => {
                 <div>
                   <p className="text-5xl font-bold">Banquet</p>
                   <div className="divider my-1 border-2 h-0 border-primary border-dashed" />
-                  <p className="text-2xl font-bold text-secondary">TBA</p>
+                  <p className="text-2xl font-bold text-secondary">
+                    To be Announced
+                  </p>
                   <p className="text-2xl font-bold ">Domus Dei Event Hall</p>
                 </div>
               </div>
