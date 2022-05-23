@@ -215,7 +215,7 @@ const Home = (e) => {
               </p>
               <div className="grid grid-cols-1 sm:grid-cols-2 text-center gap-5">
                 <div className="flex flex-col items-center gap-2">
-                  <p className="text-2xl font-semibold">Godfathers</p>
+                  <p className="text-2xl font-semibold">Godfather</p>
                   <p style={{ fontFamily: "'Zilla Slab', mono" }}>
                     Mr. Felipe Nemenzo Jr.
                   </p>
@@ -236,7 +236,7 @@ const Home = (e) => {
                   </p>
                 </div>
                 <div className="flex flex-col items-center gap-2">
-                  <p className="text-2xl font-semibold">Godmothers</p>
+                  <p className="text-2xl font-semibold">Godmother</p>
                   <p style={{ fontFamily: "'Zilla Slab', mono" }}>
                     Mrs. Ma.Luz Alucema
                   </p>
