@@ -529,7 +529,7 @@ const Home = (e) => {
                     style={{ fontFamily: "'Zilla Slab', mono" }}
                     className="capitalize"
                   >
-                    GENZOLA, DINA
+                    GENZOLA, DR. DINA
                   </p>
                 </div>
                 {/* VIP table 2 */}
@@ -1097,7 +1097,7 @@ const Home = (e) => {
                           style={{ fontFamily: "'Zilla Slab', mono" }}
                           className="capitalize"
                         >
-                          CAHILIG EDWINA
+                          ENG. CAHILIG EDWINA
                         </p>
                         <p className="capitalize flex flex-col">
                           <span style={{ fontFamily: "'Zilla Slab', mono" }}>
