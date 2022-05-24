@@ -5,6 +5,10 @@ import Navbar from '../components/Navbar';
 const RootApp = ({ Component, pageprops }) => {
   return (
     <>
+      <Head>
+        <title>Erwin and Joyce Anne Wedding</title>
+      </Head>
+
       <Navbar />
       <div className="flex flex-col items-center overflow-x-hidden">
         <div className="max-w-6xl w-full px-10 relative">

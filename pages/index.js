@@ -287,9 +287,6 @@ const Home = (e) => {
                         <p style={{ fontFamily: "'Zilla Slab', mono" }}>
                           Ms. Marie Cris Johnson
                         </p>
-                        <p style={{ fontFamily: "'Zilla Slab', mono" }}>
-                          Ms. Mae Tamayo
-                        </p>
                       </div>
                       <div className="flex flex-col">
                         <p className="font-bold underline text-lg">
@@ -1268,7 +1265,19 @@ const Home = (e) => {
                     style={{ fontFamily: "'Zilla Slab', mono" }}
                     className="text-xl font-bold mt-5"
                   >
-                    (Globe Telecom) +63 94 3679 3660
+                    (Globe Telecom) +63 943 679 3660
+                  </p>
+                </div>
+              </div>
+              <div className="card max-w-md self-center w-full">
+                <div className="card-body text-center">
+                  <p className="text-xl font-bold">Ms. Maria Joya J. Genzola</p>
+                  <p className="font-bold">Wedding Coordinator</p>
+                  <p
+                    style={{ fontFamily: "'Zilla Slab', mono" }}
+                    className="text-xl font-bold mt-5"
+                  >
+                    (Globe Telecom) +63 917 100 6089
                   </p>
                 </div>
               </div>
