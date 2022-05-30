@@ -232,7 +232,7 @@ const Home = (e) => {
                     Mr. Melchor Jose Camon
                   </p>
                   <p style={{ fontFamily: "'Zilla Slab', mono" }}>
-                    Mr. Buddy Labaste
+                    Mr. Domingo Sanchez
                   </p>
                 </div>
                 <div className="flex flex-col items-center gap-2">
@@ -867,12 +867,6 @@ const Home = (e) => {
                           className="capitalize"
                         >
                           LABASTE, LINA
-                        </p>
-                        <p
-                          style={{ fontFamily: "'Zilla Slab', mono" }}
-                          className="capitalize"
-                        >
-                          LABASTE, BUDDY
                         </p>
                         <p
                           style={{ fontFamily: "'Zilla Slab', mono" }}
