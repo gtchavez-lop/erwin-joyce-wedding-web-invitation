@@ -872,6 +872,12 @@ const Home = (e) => {
                           style={{ fontFamily: "'Zilla Slab', mono" }}
                           className="capitalize"
                         >
+                          LABASTE, BUDDY
+                        </p>
+                        <p
+                          style={{ fontFamily: "'Zilla Slab', mono" }}
+                          className="capitalize"
+                        >
                           DIGNADICE, ERICA
                         </p>
                         <p
